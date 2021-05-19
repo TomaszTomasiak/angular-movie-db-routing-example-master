@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Movie } from 'src/app/models/movie';
 
 @Component({
@@ -15,4 +16,7 @@ export class AddMovieComponent implements OnInit {
     this.model = {title: 'Jakiś film'};
   }
 
+  send(movieForm: NgForm) {
+    console.log(movieForm);
+  }
 }
