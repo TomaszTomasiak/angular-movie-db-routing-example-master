@@ -1,1 +1,11 @@
-
+<div class="grid">
+    <form class="container" #movieForm="ngForm">
+      <input
+        placeholder="Title"
+        type="text"
+        [(ngModel)]="model.title"
+        name="title"
+      />
+      <!-- <button (click)="send(movieForm)">Send</button> -->
+    </form>
+  </div>
