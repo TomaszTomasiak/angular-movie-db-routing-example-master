@@ -16,7 +16,7 @@ export class AddMovieComponent implements OnInit {
     this.model = {title: 'Jakiś film'};
   }
 
-  send(movieForm: NgForm) {
-    console.log(movieForm);
+  send() {
+    console.log(this.model);
   }
 }
