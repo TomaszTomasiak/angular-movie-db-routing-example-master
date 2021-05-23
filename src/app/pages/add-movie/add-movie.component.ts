@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Movie } from 'src/app/models/movie';
 import { HttpService } from 'src/app/services/http.service';
+import { HttpMoviesService } from 'src/app/services/http-movies.service';
 
 @Component({
   selector: 'app-add-movie',
@@ -14,7 +15,7 @@ export class AddMovieComponent implements OnInit {
   categories: string[] = [];
   years: string[] = [];
   
-  constructor(public http: HttpService) { }
+  constructor(public http: HttpService, private httpMovieService: HttpMoviesService) { }
 
   ngOnInit(): void {
     this.http.getCategories().subscribe(categories => this.categories = categories);
@@ -23,5 +24,9 @@ export class AddMovieComponent implements OnInit {
 
   send() {
     console.log(this.model);
+    this.httpMovieService.postMovie(this.model as Movie).subscribe(
+      result => console.log(result),
+      error => console.error(error)
+    )
   }
 }
