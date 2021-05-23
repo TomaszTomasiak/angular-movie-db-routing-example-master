@@ -8,17 +8,15 @@
     </div>
     <div class="row">
       <div class="input-field col s8">
-        <select class="browser-default">
-          <option value="1">Select year</option>
-          <option></option>
+        <select class="browser-default" [(ngModel)]="model.year" name="year">
+          <option *ngFor="let year of years" [ngValue]="year">{{year}}</option>
         </select>
       </div>
     </div>
     <div class="row">
       <div class="input-field col s8">
-        <select class="browser-default">
-          <option value="1">Select category</option>
-          <option>category</option>
+        <select class="browser-default" [(ngModel)]="model.category" name="category">
+          <option *ngFor="let category of categories" [ngValue]="category">{{category}}</option>
         </select>
       </div>
     </div>
