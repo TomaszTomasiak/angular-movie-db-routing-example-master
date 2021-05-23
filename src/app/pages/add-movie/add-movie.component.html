@@ -1,13 +1,58 @@
 <div class="grid">
-    <form class="container" #movieForm="ngForm" (ngSubmit)="send()">
-      <input
-        placeholder="Title"
-        type="text"
-        [(ngModel)]="model.title"
-        name="title"
-      />
-      <button type="submit">Send</button>
-      <button type="reset">Reset</button>
-      <button type="button">Button</button>
-    </form>
-  </div>
+  <form class="container" (ngSubmit)="send()">
+    <div class="row">
+      <div class="input-field col s8">
+        <input id="title" type="text" [(ngModel)]="model.title" name="title"/>
+        <label for="title">Title</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s8">
+        <select class="browser-default">
+          <option value="1">Select year</option>
+          <option></option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s8">
+        <select class="browser-default">
+          <option value="1">Select category</option>
+          <option>category</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s8">
+        <input id="director" type="text" [(ngModel)]="model.director" name="director"/>
+        <label for="director">Director</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s8">
+        <input id="plot" type="text" [(ngModel)]="model.plot" name="plot"/>
+        <label for="plot">Plot</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s8">
+        <input id="country" type="text" [(ngModel)]="model.country" name="country"/>
+        <label for="country">Country</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s8">
+        <input id="imdb" type="text" [(ngModel)]="model.imdbRating" name="imdbRating"/>
+        <label for="imdb">IMDB Rating</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s8">
+        <input id="poster" type="text" [(ngModel)]="model.poster" name="poster"/>
+        <label for="poster">Poster</label>
+      </div>
+    </div>
+    <button class="btn-small" type="submit">Send</button>
+    <button class="btn-small red" type="reset">Reset</button>
+  </form>
+</div>

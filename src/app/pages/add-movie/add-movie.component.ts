@@ -9,11 +9,10 @@ import { Movie } from 'src/app/models/movie';
 })
 export class AddMovieComponent implements OnInit {
 
-  model: Partial<Movie>;
+  model: Partial<Movie> = {};
   constructor() { }
 
   ngOnInit(): void {
-    this.model = {title: 'Jakiś film'};
   }
 
   send() {
